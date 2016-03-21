@@ -11,7 +11,6 @@ class Persona(models.Model):
     telefono=models.IntegerField()
     email=models.EmailField()
     distrito=models.CharField(max_length=20)
-    puesto=models.ForeignKey(Puesto,null=True)
     class Meta():
         abstract=True
 
@@ -22,6 +21,7 @@ class Empleado(Persona):
     password=models.CharField(max_length=20)
     fec_nac=models.DateField()
     fec_ing=models.DateField()
+    puesto=models.ForeignKey(Puesto, null=True)
 
 class Cliente(Persona):
     pass
